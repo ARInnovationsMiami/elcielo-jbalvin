@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL CIELO - Experiencia de Café Colombiano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        elcielo: {
+                            gold: '#D4AF37',
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: '#F5F5F5',
+                            darkgray: '#333333',
+                            coffee: '#6F4E37'
+                        }
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'cormorant': ['"Cormorant Garamond"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFFFFF;
+        }
+        
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+        }
+        
+        .elcielo-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        /* Device Frame Styling */
+        .device-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+        }
+        
+        .device-frame {
+            width: 375px;
+            height: 812px;
+            border: 2px solid #ddd;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .device-screen {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .device-screen::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        
+        .screen-label {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #000000;
+            font-size: 1.1rem;
+        }
+        
+        /* Card Styling */
+        .coffee-card {
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .coffee-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Button Styling */
+        .btn-primary {
+            background-color: #D4AF37;
+            color: black;
+            padding: 12px 24px;
+            border-radius: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #000000;
+            color: #D4AF37;
+        }
+        
+        .btn-secondary {
+            background: black;
+            color: #D4AF37;
+            padding: 12px 24px;
+            border-radius: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #D4AF37;
+            color: black;
+        }
+        
+        .gold-border {
+            border: 1px solid #D4AF37;
+        }
+        
+        .coffee-bg {
+            background-color: #6F4E37;
+        }
+        
+        .coffee-region {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .coffee-region img {
+            transition: all 0.5s ease;
+        }
+        
+        .coffee-region:hover img {
+            transform: scale(1.05);
+        }
+        
+        .coffee-region .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .coffee-region:hover .overlay {
+            background: linear-gradient(to top, rgba(212,175,55,0.8) 0%, rgba(212,175,55,0) 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold text-black mb-8 text-center font-cormorant">EXPERIENCIA DE CAFÉ EL CIELO</h1>
+        <p class="text-center mb-8 text-black">Un viaje por las mejores regiones cafeteras de Colombia</p>
+        
+        <div class="flex flex-wrap justify-center">
+            <!-- Coffee Proposal Screen -->
+            <div class="device-container">
+                <div class="device-frame">
+                    <div class="device-screen">
+                        <!-- Hero Section -->
+                        <div class="relative h-80">
+                            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Café Colombiano" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 elcielo-gradient"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                                <img src="https://elcielorestaurant.com/wp-content/uploads/2019/05/logo-elcielo-juan-manuel-barrientos.png" 
+                                     alt="Logo de El Cielo" 
+                                     class="h-16 mb-4">
+                                <h1 class="text-white text-3xl font-cormorant mb-2">HERENCIA CAFETERA</h1>
+                                <p class="text-white text-lg mb-2">Del Grano a la Experiencia</p>
+                                <p class="text-elcielo-gold font-medium">Curado por Chef Juanma</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Introduction Section -->
+                        <div class="p-6">
+                            <h2 class="text-black text-2xl font-cormorant mb-4">LA HISTORIA DEL CAFÉ COLOMBIANO</h2>
+                            
+                            <p class="text-sm mb-4">El café de Colombia es reconocido mundialmente por su calidad excepcional, perfiles de sabor distintivos y la rica herencia cultural detrás de su cultivo. En El Cielo, celebramos este legado a través de nuestras experiencias exclusivas de café.</p>
+                            
+                            <p class="text-sm mb-4">El Chef Juan Manuel Barrientos ha seleccionado personalmente los mejores granos de las regiones productoras más prestigiosas de Colombia, trabajando directamente con agricultores que comparten nuestro compromiso con la excelencia, la sostenibilidad y la tradición.</p>
+                            
+                            <div class="flex justify-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="Granos de Café Colombiano" 
+                                     class="w-full h-48 object-cover">
+                            </div>
+                            
+                            <p class="text-sm">Cada taza de café El Cielo cuenta una historia de pasión, patrimonio y perfección, ofreciendo una experiencia sensorial que transporta a los bebedores al corazón de las montañas colombianas.</p>
+                        </div>
+                        
+                        <!-- Coffee Regions Section -->
+                        <div class="p-6 bg-elcielo-gray">
+                            <h2 class="text-black text-2xl font-cormorant mb-4">REGIONES DISTINGUIDAS</h2>
+                            
+                            <div class="grid grid-cols-1 gap-4 mb-4">
+                                <div class="coffee-region h-48">
+                                    <img src="https://images.unsplash.com/photo-1598237601465-af66b7475e92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                         alt="Región Cafetera de Huila" 
+                                         class="w-full h-full object-cover">
+                                    <div class="overlay">
+                                        <h3 class="text-white font-cormorant text-xl mb-1">Huila</h3>
+                                        <p class="text-xs text-white">Notas de chocolate, caramelo y frutas cítricas con un cuerpo medio y acidez brillante.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="coffee-region h-48">
+                                    <img src="https://images.unsplash.com/photo-1501492673258-2bcfc17241fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                         alt="Región Cafetera de Nariño" 
+                                         class="w-full h-full object-cover">
+                                    <div class="overlay">
+                                        <h3 class="text-white font-cormorant text-xl mb-1">Nariño</h3>
+                                        <p class="text-xs text-white">Perfil complejo con notas de frutas rojas, caramelo y un toque de especias, con acidez pronunciada.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="coffee-region h-48">
+                                    <img src="https://images.unsplash.com/photo-1504113888839-1c8eb50233d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                         alt="Región Cafetera de Antioquia" 
+                                         class="w-full h-full object-cover">
+                                    <div class="overlay">
+                                        <h3 class="text-white font-cormorant text-xl mb-1">Antioquia</h3>
+                                        <p class="text-xs text-white">Sabores a nuez y chocolate con un toque de caramelo, cuerpo medio-completo y acidez equilibrada.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Coffee Experiences Section -->
+                        <div class="p-6">
+                            <h2 class="text-black text-2xl font-cormorant mb-4">EXPERIENCIAS EXCLUSIVAS DE CAFÉ</h2>
+                            
+                            <div class="coffee-card bg-white mb-6 gold-border">
+                                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="Degustación de Café" 
+                                     class="w-full h-48 object-cover">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-cormorant mb-2">Degustación de Café Premium</h3>
+                                    <p class="text-sm mb-3">Una experiencia guiada a través de nuestros cafés más exclusivos, donde aprenderás a identificar las sutiles notas y características de cada región.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-elcielo-gold font-medium">$75 por persona</span>
+                                        <button class="btn-secondary text-sm">Reservar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="coffee-card bg-white mb-6 gold-border">
+                                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="Maridaje de Café y Chocolate" 
+                                     class="w-full h-48 object-cover">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-cormorant mb-2">Maridaje de Café y Chocolate</h3>
+                                    <p class="text-sm mb-3">Descubre cómo los sabores del café colombiano complementan perfectamente los chocolates artesanales en esta experiencia sensorial única.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-elcielo-gold font-medium">$95 por persona</span>
+                                        <button class="btn-secondary text-sm">Reservar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Coffee Products Section -->
+                        <div class="p-6 coffee-bg">
+                            <h2 class="text-white text-2xl font-cormorant mb-4">COLECCIÓN DE CAFÉ SIGNATURE</h2>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-white p-3">
+                                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                         alt="Café Premium de Huila" 
+                                         class="w-full h-24 object-cover mb-2">
+                                    <h3 class="text-sm font-medium mb-1">Huila Premium</h3>
+                                    <p class="text-xs text-gray-500 mb-2">250g</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-elcielo-gold text-xs font-medium">$28</span>
+                                        <button class="bg-black text-white text-xs px-2 py-1">Añadir</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white p-3">
+                                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                         alt="Café Especial de Nariño" 
+                                         class="w-full h-24 object-cover mb-2">
+                                    <h3 class="text-sm font-medium mb-1">Nariño Especial</h3>
+                                    <p class="text-xs text-gray-500 mb-2">250g</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-elcielo-gold text-xs font-medium">$32</span>
+                                        <button class="bg-black text-white text-xs px-2 py-1">Añadir</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white p-3">
+                                    <img src="https://images.unsplash.com/photo-1565600444102-063f8a7a1e37?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                         alt="Café de Antioquia" 
+                                         class="w-full h-24 object-cover mb-2">
+                                    <h3 class="text-sm font-medium mb-1">Antioquia Reserva</h3>
+                                    <p class="text-xs text-gray-500 mb-2">250g</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-elcielo-gold text-xs font-medium">$30</span>
+                                        <button class="bg-black text-white text-xs px-2 py-1">Añadir</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white p-3">
+                                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                         alt="Colección de Café El Cielo" 
+                                         class="w-full h-24 object-cover mb-2">
+                                    <h3 class="text-sm font-medium mb-1">Colección El Cielo</h3>
+                                    <p class="text-xs text-gray-500 mb-2">3 x 100g</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-elcielo-gold text-xs font-medium">$45</span>
+                                        <button class="bg-black text-white text-xs px-2 py-1">Añadir</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button class="btn-primary">Ver Toda la Colección</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Chef's Note Section -->
+                        <div class="p-6 text-center bg-black text-white">
+                            <h2 class="text-elcielo-gold text-2xl font-cormorant mb-3">ÚNETE A LA EXPERIENCIA</h2>
+                            <p class="mb-6">Descubre el arte del café colombiano en El Cielo.</p>
+                            
+                            <div class="flex flex-col items-center">
+                                <img src="https://www.elcielorestaurant.com/wp-content/uploads/2018/10/juan-manuel-barrientos-chef-elcielo.jpg" 
+                                     alt="Chef Juan Manuel Barrientos" 
+                                     class="w-24 h-24 rounded-full object-cover mb-4">
+                                <p class="italic text-sm mb-4">"El café es más que una bebida en Colombia; es parte de nuestra identidad cultural y patrimonio. A través de estas experiencias, espero compartir la pasión y artesanía detrás de cada grano."</p>
+                                <p class="text-xs font-medium text-elcielo-gold">— Chef Juan Manuel Barrientos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen-label">Experiencia de Café El Cielo</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL CIELO - Colombian Coffee Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        elcielo: {
+                            gold: '#D4AF37',
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: '#F5F5F5',
+                            darkgray: '#333333',
+                            coffee: '#6F4E37'
+                        }
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'cormorant': ['"Cormorant Garamond"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFFFFF;
+        }
+        
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+        }
+        
+        .elcielo-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        /* Card Styling */
+        .coffee-card {
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .coffee-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Button Styling */
+        .btn-primary {
+            background-color: #D4AF37;
+            color: black;
+            padding: 12px 24px;
+            border-radius: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #000000;
+            color: #D4AF37;
+        }
+        
+        .btn-secondary {
+            background: black;
+            color: #D4AF37;
+            padding: 12px 24px;
+            border-radius: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #D4AF37;
+            color: black;
+        }
+        
+        .gold-border {
+            border: 1px solid #D4AF37;
+        }
+        
+        .coffee-bg {
+            background-color: #6F4E37;
+        }
+        
+        .coffee-region {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .coffee-region img {
+            transition: all 0.5s ease;
+        }
+        
+        .coffee-region:hover img {
+            transform: scale(1.05);
+        }
+        
+        .coffee-region .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .coffee-region:hover .overlay {
+            background: linear-gradient(to top, rgba(212,175,55,0.8) 0%, rgba(212,175,55,0) 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+            color: #000;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #D4AF37;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .active-nav {
+            color: #D4AF37;
+        }
+        
+        .active-nav:after {
+            width: 100%;
+            background-color: #D4AF37;
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .product-card .btn-cart {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover .btn-cart {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white py-4 px-6 shadow-sm fixed w-full z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="assets/highlights/cielo.png" 
+                     alt="El Cielo Logo" 
+                     class="h-10">
+            </a>
+            
+            <div class="hidden md:flex items-center">
+                <a href="desktop-UI.html" class="nav-link">Event Recap</a>
+                <a href="#" class="nav-link active-nav">Coffee Experience</a>
+                <a href="#" class="nav-link">Restaurants</a>
+                <a href="#" class="nav-link">About</a>
+            </div>
+            
+            <div class="flex items-center">
+                <a href="#contact" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="relative h-screen pt-16">
+        <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+             alt="Colombian Coffee" 
+             class="w-full h-full object-cover absolute inset-0">
+        <div class="absolute inset-0 elcielo-gradient"></div>
+        <div class="container mx-auto h-full flex flex-col items-center justify-center text-center px-6 relative z-1">
+            <img src="assets/el-cielo-logo.svg" 
+                 alt="El Cielo Logo" 
+                 class="h-24 mb-6">
+            <h1 class="text-white text-6xl font-cormorant mb-4">COFFEE HERITAGE</h1>
+            <p class="text-white text-2xl mb-6">From Bean to Experience</p>
+            <p class="text-elcielo-gold font-medium text-xl mb-8">Curated by Chef Juanma</p>
+            <div class="flex space-x-4">
+                <button class="btn-primary">Explore Experiences</button>
+                <button class="btn-secondary">Shop Collection</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Introduction Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-12 mb-10 md:mb-0">
+                    <h2 class="text-black text-4xl font-cormorant mb-6">THE COLOMBIAN COFFEE STORY</h2>
+                    
+                    <p class="text-lg mb-6">Colombia's coffee is renowned worldwide for its exceptional quality, distinctive flavor profiles, and the rich cultural heritage behind its cultivation. At El Cielo, we celebrate this legacy through our exclusive coffee experiences.</p>
+                    
+                    <p class="text-lg mb-6">Chef Juan Manuel Barrientos has personally selected the finest beans from Colombia's most prestigious growing regions, working directly with farmers who share our commitment to excellence, sustainability, and tradition.</p>
+                    
+                    <p class="text-lg">Our coffee program represents a journey through Colombia's diverse terroirs, showcasing the unique characteristics that emerge from different altitudes, microclimates, and processing methods.</p>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Coffee Plantation" 
+                         class="w-full rounded-lg shadow-lg">
+                    <p class="text-sm text-gray-500 mt-3 italic text-center">Chef Juanma visiting coffee farms in the Colombian highlands</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Coffee Regions -->
+    <section class="py-20 bg-elcielo-gray">
+        <div class="container mx-auto px-6">
+            <h2 class="text-black text-4xl font-cormorant mb-12 text-center">DISTINGUISHED REGIONS</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="coffee-region h-96">
+                    <img src="https://images.unsplash.com/photo-1500353391678-d7b57979d6d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Huila Region" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <h3 class="text-white font-cormorant text-2xl mb-2">Huila</h3>
+                        <p class="text-white">Known for bright acidity, full body, and notes of tropical fruit. Grown at elevations between 1,500-2,000 meters in rich volcanic soil.</p>
+                    </div>
+                </div>
+                
+                <div class="coffee-region h-96">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Nariño Region" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <h3 class="text-white font-cormorant text-2xl mb-2">Nariño</h3>
+                        <p class="text-white">Distinctive for its sweet profile, citrus notes, and delicate herbal undertones. Cultivated on steep slopes at some of Colombia's highest elevations.</p>
+                    </div>
+                </div>
+                
+                <div class="coffee-region h-96">
+                    <img src="assets/highlights/1C7A3630.jpg" 
+                         alt="Santander Region" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <h3 class="text-white font-cormorant text-2xl mb-2">Santander</h3>
+                        <p class="text-white">Characterized by chocolate notes, medium acidity, and caramel sweetness. Traditional farming methods passed down through generations create its distinctive profile.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="btn-secondary">Learn About Our Sourcing</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Coffee Experiences -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-black text-4xl font-cormorant mb-12 text-center">EXCLUSIVE COFFEE EXPERIENCES</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="coffee-card bg-white gold-border h-full">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Coffee Tasting" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="font-cormorant text-2xl mb-3">Sensory Tasting Journey</h3>
+                        <p class="text-gray-700 mb-4">$85 per person | 90 minutes</p>
+                        <p class="mb-6">A guided exploration of five premium Colombian coffees, each prepared using different methods to highlight their unique characteristics. Includes coffee-inspired petit fours created by our pastry chef.</p>
+                        <button class="btn-primary w-full">Reserve Experience</button>
+                    </div>
+                </div>
+                
+                <div class="coffee-card bg-white gold-border h-full">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Coffee Pairing" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="font-cormorant text-2xl mb-3">Coffee & Gastronomy Pairing</h3>
+                        <p class="text-gray-700 mb-4">$150 per person | 2 hours</p>
+                        <p class="mb-6">An innovative culinary experience pairing specialty coffees with Chef Juanma's signature dishes. Discover how coffee can complement and enhance fine dining in unexpected ways.</p>
+                        <button class="btn-primary w-full">Reserve Experience</button>
+                    </div>
+                </div>
+                
+                <div class="coffee-card bg-white gold-border h-full">
+                    <img src="https://images.unsplash.com/photo-1516600164266-f3b8166ae679?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Coffee Masterclass" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="font-cormorant text-2xl mb-3">Barista Masterclass</h3>
+                        <p class="text-gray-700 mb-4">$220 per person | 3 hours</p>
+                        <p class="mb-6">Learn the art of coffee preparation from our master baristas. From bean selection to brewing techniques, develop the skills to create exceptional coffee at home. Includes a take-home kit with El Cielo signature beans.</p>
+                        <button class="btn-primary w-full">Reserve Experience</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Signature Coffee Products -->
+    <section class="py-20 coffee-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-white text-4xl font-cormorant mb-12 text-center">SIGNATURE COFFEE COLLECTION</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                <div class="product-card bg-white p-6">
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                         alt="Premium Blend" 
+                         class="w-full h-64 object-cover mb-4">
+                    <h3 class="font-medium text-lg mb-1">El Cielo Premium Blend</h3>
+                    <p class="text-sm text-gray-700 mb-2">250g | $28</p>
+                    <p class="text-sm mb-4">A balanced blend featuring beans from Huila and Nariño, offering notes of chocolate, caramel, and citrus.</p>
+                    <button class="btn-cart btn-secondary w-full text-sm py-2">Add to Cart</button>
+                </div>
+                
+                <div class="product-card bg-white p-6">
+                    <img src="assets/highlights/1C7A3650.jpg" 
+                         alt="Single Origin" 
+                         class="w-full h-64 object-cover mb-4">
+                    <h3 class="font-medium text-lg mb-1">Huila Single Origin</h3>
+                    <p class="text-sm text-gray-700 mb-2">250g | $32</p>
+                    <p class="text-sm mb-4">Bright and fruity with notes of tropical fruits, honey, and a clean, vibrant acidity. Medium roast.</p>
+                    <button class="btn-cart btn-secondary w-full text-sm py-2">Add to Cart</button>
+                </div>
+                
+                <div class="product-card bg-white p-6">
+                    <img src="https://images.unsplash.com/photo-1610889556528-9a770e32642f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                         alt="Gift Box" 
+                         class="w-full h-64 object-cover mb-4">
+                    <h3 class="font-medium text-lg mb-1">Regional Tasting Box</h3>
+                    <p class="text-sm text-gray-700 mb-2">3 × 100g | $45</p>
+                    <p class="text-sm mb-4">Experience three distinct Colombian regions in one elegant gift box. Perfect for coffee enthusiasts.</p>
+                    <button class="btn-cart btn-secondary w-full text-sm py-2">Add to Cart</button>
+                </div>
+                
+                <div class="product-card bg-white p-6">
+                    <img src="https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                         alt="Cold Brew" 
+                         class="w-full h-64 object-cover mb-4">
+                    <h3 class="font-medium text-lg mb-1">Signature Cold Brew</h3>
+                    <p class="text-sm text-gray-700 mb-2">6 × 200ml | $36</p>
+                    <p class="text-sm mb-4">Our ready-to-drink cold brew features a smooth, low-acid profile with notes of chocolate and caramel.</p>
+                    <button class="btn-cart btn-secondary w-full text-sm py-2">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn-primary px-8">Shop Full Collection</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Chef's Note -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-black text-4xl font-cormorant mb-12 text-center">A NOTE FROM CHEF JUANMA</h2>
+                
+                <div class="flex flex-col md:flex-row items-center md:items-start">
+                    <img src="assets/highlights/R05_3764.jpg" 
+                         alt="Chef Juan Manuel Barrientos" 
+                         class="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 md:mr-8">
+                    <div>
+                        <div class="mb-6">
+                            <h3 class="font-medium text-xl">Juan Manuel Barrientos</h3>
+                            <p class="text-gray-600">Executive Chef & Founder</p>
+                        </div>
+                        
+                        <p class="text-lg italic mb-6">"Coffee is not just a beverage in Colombia—it's our heritage, our tradition, and our future. Through El Cielo's coffee program, I invite you to experience the passion and craftsmanship that goes into every bean, every cup, and every moment of enjoyment."</p>
+                        
+                        <p class="text-lg mb-6">"Our partnerships with small-scale farmers ensure that we not only deliver exceptional quality but also support the communities that have preserved these traditions for generations. Each cup tells a story of the land, the people, and the culture that make Colombian coffee truly special."</p>
+                        
+                        <p class="text-lg">"I believe that coffee, like fine cuisine, has the power to create memorable experiences and bring people together. It's this belief that inspires our approach to coffee at El Cielo."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-elcielo-gold text-4xl font-cormorant mb-6">JOIN THE EXPERIENCE</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">Discover the art of Colombian coffee at El Cielo through our curated experiences and signature collection.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <button class="btn-primary px-8 py-4">Book Coffee Experience</button>
+                <button class="btn-secondary px-8 py-4">Shop Coffee Products</button>
+                <a href="desktop-UI.html" class="border border-elcielo-gold text-elcielo-gold px-8 py-4">Back to Event Recap</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="bg-black py-12" id="contact">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="assets/el-cielo-logo.svg" 
+                         alt="El Cielo Logo" 
+                         class="h-12 mb-6">
+                    <p class="text-white text-sm mb-4">El Cielo Restaurant Group brings the essence of Colombia to the world through innovative gastronomy and cultural experiences.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-elcielo-gold font-cormorant text-xl mb-6">Locations</h3>
+                    <ul class="text-white space-y-2">
+                        <li>Miami</li>
+                        <li>Washington D.C.</li>
+                        <li>Bogotá</li>
+                        <li>Medellín</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-elcielo-gold font-cormorant text-xl mb-6">Connect</h3>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="text-white hover:text-elcielo-gold">
+                            <i data-feather="instagram" width="24" height="24"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-elcielo-gold">
+                            <i data-feather="facebook" width="24" height="24"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-elcielo-gold">
+                            <i data-feather="twitter" width="24" height="24"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-elcielo-gold">
+                            <i data-feather="youtube" width="24" height="24"></i>
+                        </a>
+                    </div>
+                    <p class="text-white text-sm">Follow us for the latest updates</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-elcielo-gold font-cormorant text-xl mb-6">Contact</h3>
+                    <ul class="text-white space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2" width="16" height="16"></i>
+                            contact@elcielo.com
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="mr-2" width="16" height="16"></i>
+                            +1 (305) 555-1234
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="mr-2" width="16" height="16"></i>
+                            31 SE 5th Street, Miami, FL 33131
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-white text-center text-sm">© 2025 El Cielo Restaurant Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

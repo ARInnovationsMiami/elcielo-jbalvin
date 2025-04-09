@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL CIELO × Vibra en Alta × J Balvin - Event Recap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        elcielo: {
+                            gold: '#D4AF37',
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: '#F5F5F5',
+                            darkgray: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'cormorant': ['"Cormorant Garamond"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFFFFF;
+        }
+        
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+        }
+        
+        .elcielo-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        /* Device Frame Styling */
+        .device-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+        }
+        
+        .device-frame {
+            width: 375px;
+            height: 812px;
+            border: 2px solid #ddd;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .device-screen {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .device-screen::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        
+        .screen-label {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #000000;
+            font-size: 1.1rem;
+        }
+        
+        /* Card Styling */
+        .event-card {
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Button Styling */
+        .btn-primary {
+            background-color: #D4AF37;
+            color: black;
+            padding: 12px 24px;
+            border-radius: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #000000;
+            color: #D4AF37;
+        }
+        
+        .btn-secondary {
+            background: black;
+            color: #D4AF37;
+            padding: 12px 24px;
+            border-radius: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #D4AF37;
+            color: black;
+        }
+        
+        .gold-border {
+            border: 1px solid #D4AF37;
+        }
+        
+        .gold-text {
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold text-black mb-8 text-center font-cormorant">EL CIELO EVENT RECAP</h1>
+        <p class="text-center mb-8 text-black">A celebration of Colombian heritage and culinary excellence</p>
+        
+        <div class="flex flex-wrap justify-center">
+            <!-- Event Recap Screen -->
+            <div class="device-container">
+                <div class="device-frame">
+                    <div class="device-screen">
+                        <!-- Hero Section -->
+                        <div class="relative h-80">
+                            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="El Cielo Event" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 elcielo-gradient"></div>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                                <img src="https://elcielorestaurant.com/wp-content/uploads/2019/05/logo-elcielo-juan-manuel-barrientos.png" 
+                                     alt="El Cielo Logo" 
+                                     class="h-16 mb-4">
+                                <h1 class="text-white text-3xl font-cormorant mb-2">CULINARY JOURNEY</h1>
+                                <p class="text-white text-lg mb-4">With Chef Juanma & J Balvin</p>
+                                <p class="text-elcielo-gold font-medium">June 15, 2025 • Miami, Florida</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Highlights Section -->
+                        <div class="p-6 bg-black text-white">
+                            <h2 class="text-elcielo-gold text-2xl font-cormorant mb-4">EVENT HIGHLIGHTS</h2>
+                            
+                            <div class="mb-6">
+                                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="Gourmet Dinner" 
+                                     class="w-full h-48 object-cover mb-3">
+                                <h3 class="text-elcielo-gold font-cormorant text-xl mb-2">A Night of Culinary Excellence</h3>
+                                <p class="text-sm text-gray-300">Over 200 guests experienced Chef Juanma's innovative Colombian cuisine paired with exclusive cocktails and live performances.</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="J Balvin Performance" 
+                                     class="w-full h-48 object-cover mb-3">
+                                <h3 class="text-elcielo-gold font-cormorant text-xl mb-2">Exclusive Performance</h3>
+                                <p class="text-sm text-gray-300">J Balvin delivered an intimate performance of his greatest hits, celebrating Colombian music and culture.</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="Charity Auction" 
+                                     class="w-full h-48 object-cover mb-3">
+                                <h3 class="text-elcielo-gold font-cormorant text-xl mb-2">Fundraising Success</h3>
+                                <p class="text-sm text-gray-300">The charity auction raised over $250,000 for Vibra en Alta Foundation's educational initiatives in Colombia.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Featured Personalities -->
+                        <div class="p-6">
+                            <h2 class="text-black text-2xl font-cormorant mb-4">FEATURED PERSONALITIES</h2>
+                            
+                            <div class="event-card bg-white mb-6 gold-border">
+                                <div class="flex flex-col md:flex-row">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="https://www.elcielorestaurant.com/wp-content/uploads/2018/10/juan-manuel-barrientos-chef-elcielo.jpg" 
+                                             alt="Chef Juan Manuel Barrientos" 
+                                             class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-4 w-full md:w-2/3">
+                                        <h3 class="font-cormorant text-xl mb-2">Chef Juan Manuel Barrientos</h3>
+                                        <p class="text-sm text-gray-700 mb-2">Founder & Executive Chef of El Cielo</p>
+                                        <p class="text-sm">Award-winning chef known for his innovative neurogastronomy approach, combining Colombian traditions with cutting-edge techniques. His restaurants have earned Michelin stars and international acclaim.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="event-card bg-white mb-6 gold-border">
+                                <div class="flex flex-col md:flex-row">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="https://www.rollingstone.com/wp-content/uploads/2020/11/J-Balvin.jpg" 
+                                             alt="J Balvin" 
+                                             class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-4 w-full md:w-2/3">
+                                        <h3 class="font-cormorant text-xl mb-2">J Balvin</h3>
+                                        <p class="text-sm text-gray-700 mb-2">Global Music Icon & Philanthropist</p>
+                                        <p class="text-sm">Grammy-winning artist and cultural ambassador who uses his platform to promote Colombian culture worldwide while supporting social causes through his philanthropic work.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Guest Testimonials -->
+                        <div class="p-6 bg-elcielo-gray">
+                            <h2 class="text-black text-2xl font-cormorant mb-4">GUEST TESTIMONIALS</h2>
+                            
+                            <div class="mb-4 p-4 bg-white">
+                                <p class="text-sm italic mb-2">"An unforgettable fusion of gastronomy, music, and purpose. Chef Juanma's creations were nothing short of magical, and J Balvin's performance was the perfect complement."</p>
+                                <p class="text-xs font-medium">- Maria Rodriguez, Food Critic</p>
+                            </div>
+                            
+                            <div class="mb-4 p-4 bg-white">
+                                <p class="text-sm italic mb-2">"The event perfectly captured the essence of modern Colombia—innovative, vibrant, and deeply rooted in tradition. A true celebration of our heritage."</p>
+                                <p class="text-xs font-medium">- Carlos Vega, Attendee</p>
+                            </div>
+                            
+                            <div class="p-4 bg-white">
+                                <p class="text-sm italic mb-2">"Beyond the exquisite food and entertainment, what stood out was the genuine commitment to social impact. This wasn't just an event; it was a movement."</p>
+                                <p class="text-xs font-medium">- Sofia Martinez, Vibra en Alta Foundation</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Gallery -->
+                        <div class="p-6">
+                            <h2 class="text-black text-2xl font-cormorant mb-4">PHOTO GALLERY</h2>
+                            
+                            <div class="grid grid-cols-2 gap-2 mb-4">
+                                <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Event Photo 1" 
+                                     class="w-full h-32 object-cover">
+                                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Event Photo 2" 
+                                     class="w-full h-32 object-cover">
+                                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Event Photo 3" 
+                                     class="w-full h-32 object-cover">
+                                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Event Photo 4" 
+                                     class="w-full h-32 object-cover">
+                            </div>
+                            
+                            <button class="btn-secondary w-full">View Full Gallery</button>
+                        </div>
+                        
+                        <!-- CTA Section -->
+                        <div class="p-6 text-center bg-black text-white">
+                            <h2 class="text-elcielo-gold text-2xl font-cormorant mb-3">EXPERIENCE EL CIELO</h2>
+                            <p class="mb-6">Join us for our next exclusive event or visit one of our restaurants.</p>
+                            
+                            <div class="flex flex-col items-center">
+                                <button class="btn-primary w-full mb-3">Reserve a Table</button>
+                                <a href="coffee-proposal.html" class="btn-secondary w-full mb-3">Explore Our Coffee</a>
+                                <button class="border border-elcielo-gold text-elcielo-gold w-full py-3">Join Our Mailing List</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Sponsors Section -->
+                        <div class="p-6 bg-white">
+                            <h2 class="text-black text-2xl font-cormorant mb-4 text-center">OUR SPONSORS</h2>
+                            
+                            <div class="flex justify-center items-center mb-6">
+                                <div class="mx-4">
+                                    <img src="https://logos-world.net/wp-content/uploads/2021/02/JP-Morgan-Symbol.png" 
+                                         alt="JPM Logo" 
+                                         class="h-12">
+                                </div>
+                                <div class="mx-4">
+                                    <img src="https://elcielorestaurant.com/wp-content/uploads/2019/05/logo-elcielo-juan-manuel-barrientos.png" 
+                                         alt="El Cielo Logo" 
+                                         class="h-12">
+                                </div>
+                            </div>
+                            
+                            <p class="text-center text-sm text-gray-600">Special thanks to our sponsors for making this event possible.</p>
+                        </div>
+                        
+                        <!-- Footer Section -->
+                        <div class="bg-black p-6">
+                            <div class="flex justify-center mb-6">
+                                <a href="#" class="mx-2">
+                                    <i data-feather="instagram" class="text-elcielo-gold" width="24" height="24"></i>
+                                </a>
+                                <a href="#" class="mx-2">
+                                    <i data-feather="facebook" class="text-elcielo-gold" width="24" height="24"></i>
+                                </a>
+                                <a href="#" class="mx-2">
+                                    <i data-feather="twitter" class="text-elcielo-gold" width="24" height="24"></i>
+                                </a>
+                            </div>
+                            
+                            <p class="text-white text-center text-xs">© 2025 El Cielo Restaurant Group</p>
+                            <p class="text-white text-center text-xs mt-1">contact@elcielo.com | +1 (305) 555-1234</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen-label">El Cielo Event Recap</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
